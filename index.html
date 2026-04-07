@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Mestre RPG</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <button class="tab-btn active" onclick="tab('mapa')">🗺️ Mapa</button>
+        <button class="tab-btn" onclick="tab('fichas')">👤 Personagens</button>
+        <button class="tab-btn" onclick="tab('dados')">🎲 Dados</button>
+        <button class="tab-btn" onclick="tab('notas')">📝 Notas</button>
+    </nav>
+
+    <div id="mapa" class="container active">
+        <h2>Seu Mapa de Jogo</h2>
+        <div class="box">
+            <input type="file" id="map-upload" accept="image/*">
+        </div>
+        <div id="map-wrapper">
+            <img id="map-img" src="" alt="Aguardando imagem...">
+        </div>
+    </div>
+
+    <div id="fichas" class="container">
+        <div class="box">
+            <h3>Nova Ficha (37 Pontos)</h3>
+            <p>Pontos Restantes: <span id="pts">37</span></p>
+            <div class="grid">
+                <input type="text" placeholder="Nome">
+                <input type="number" class="attr" placeholder="VID" oninput="calcPts()">
+                <input type="number" class="attr" placeholder="FOR" oninput="calcPts()">
+                <input type="number" class="attr" placeholder="AGI" oninput="calcPts()">
+                </div>
+        </div>
+    </div>
+
+    <div id="dados" class="container">
+        <div class="dice-res" id="d-res">--</div>
+        <button onclick="roll(20)">Rolar D20</button>
+    </div>
+
+    <div id="notas" class="container">
+        <textarea id="notepad" placeholder="Suas anotações..."></textarea>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
