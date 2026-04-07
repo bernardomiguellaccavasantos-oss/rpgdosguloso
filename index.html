@@ -15,35 +15,50 @@
     </nav>
 
     <div id="mapa" class="container active">
-        <h2>Seu Mapa de Jogo</h2>
         <div class="box">
+            <label>Carregar Mapa do PC:</label>
             <input type="file" id="map-upload" accept="image/*">
         </div>
         <div id="map-wrapper">
-            <img id="map-img" src="" alt="Aguardando imagem...">
+            <img id="map-img" src="" alt="Carregue uma imagem para começar">
         </div>
     </div>
 
     <div id="fichas" class="container">
         <div class="box">
-            <h3>Nova Ficha (37 Pontos)</h3>
+            <h3>Novo Personagem (37 Pontos)</h3>
             <p>Pontos Restantes: <span id="pts">37</span></p>
             <div class="grid">
-                <input type="text" placeholder="Nome">
-                <input type="number" class="attr" placeholder="VID" oninput="calcPts()">
-                <input type="number" class="attr" placeholder="FOR" oninput="calcPts()">
-                <input type="number" class="attr" placeholder="AGI" oninput="calcPts()">
-                </div>
+                <input type="text" id="p-nome" placeholder="Nome">
+                <input type="number" class="attr" id="p-vid" placeholder="VID" oninput="calcPts()">
+                <input type="number" class="attr" id="p-for" placeholder="FOR" oninput="calcPts()">
+                <input type="number" class="attr" id="p-agi" placeholder="AGI" oninput="calcPts()">
+                <input type="number" class="attr" id="p-sor" placeholder="SOR" oninput="calcPts()">
+                <input type="number" class="attr" id="p-car" placeholder="CAR" oninput="calcPts()">
+                <input type="number" class="attr" id="p-int" placeholder="INT" oninput="calcPts()">
+                <input type="number" class="attr" id="p-per" placeholder="PER" oninput="calcPts()">
+            </div>
+            <button class="btn-main" onclick="salvarPersonagem()">Salvar Personagem</button>
         </div>
+        <div id="lista-personagens"></div>
     </div>
 
     <div id="dados" class="container">
-        <div class="dice-res" id="d-res">--</div>
-        <button onclick="roll(20)">Rolar D20</button>
+        <div class="box" style="text-align:center">
+            <div class="dice-res" id="d-res">--</div>
+            <div class="dice-grid">
+                <button onclick="roll(4)">D4</button>
+                <button onclick="roll(6)">D6</button>
+                <button onclick="roll(8)">D8</button>
+                <button onclick="roll(10)">D10</button>
+                <button onclick="roll(12)">D12</button>
+                <button onclick="roll(20)">D20</button>
+            </div>
+        </div>
     </div>
 
     <div id="notas" class="container">
-        <textarea id="notepad" placeholder="Suas anotações..."></textarea>
+        <textarea id="notepad" placeholder="Escreva aqui... Suas notas são salvas automaticamente!"></textarea>
     </div>
 
     <script src="script.js"></script>
